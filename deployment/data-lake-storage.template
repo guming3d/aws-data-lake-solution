@@ -50,10 +50,10 @@ Mappings:
             "InstanceType": "r4.large.elasticsearch"
             "DedicatedMasterType": "t2.small.elasticsearch"
         cn-north-1:
-            "InstanceType": "r4.large.elasticsearch"
+            "InstanceType": "m4.large.elasticsearch"
             "DedicatedMasterType": "t2.small.elasticsearch"
         cn-northwest-1:
-            "InstanceType": "r4.large.elasticsearch"
+            "InstanceType": "m4.large.elasticsearch"
             "DedicatedMasterType": "t2.small.elasticsearch"
 
 Resources:
