@@ -49,7 +49,7 @@ Resources:
     DataLakeStorageStack:
         Type: "AWS::CloudFormation::Stack"
         Properties:
-            TemplateURL: !Join ["/", ["https://s3.amazonaws.com", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-storage.template"]]
+            TemplateURL: !Join ["/", ["https://s3.cn-north-1.amazonaws.com.cn", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-storage.template"]]
 
     DataLakeUserPool:
         Type: "Custom::LoadLambda"
