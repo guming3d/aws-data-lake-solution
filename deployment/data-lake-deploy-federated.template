@@ -43,7 +43,7 @@ Resources:
     DataLakeStorageStack:
         Type: "AWS::CloudFormation::Stack"
         Properties:
-            TemplateURL: !Join ["/", ["https://s3.amazonaws.com", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-storage.template"]]
+            TemplateURL: !Join ["/", ["https://s3.cn-north-1.amazonaws.com.cn", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-storage.template"]]
 
     DataLakeUserPool:
         Type: "Custom::LoadLambda"
@@ -60,7 +60,7 @@ Resources:
         DependsOn: "DataLakeUserPool"
         Type: "AWS::CloudFormation::Stack"
         Properties:
-            TemplateURL: !Join ["/", ["https://s3.amazonaws.com", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-services.template"]]
+            TemplateURL: !Join ["/", ["https://s3.cn-north-1.amazonaws.com.cn", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-services.template"]]
             Parameters:
                 UserPoolId: !GetAtt DataLakeUserPool.UserPoolId
                 UserPoolClientId: !GetAtt DataLakeUserPool.UserPoolClientId
@@ -73,7 +73,7 @@ Resources:
             - "DataLakeServicesStack"
         Type: "AWS::CloudFormation::Stack"
         Properties:
-            TemplateURL: !Join ["/", ["https://s3.amazonaws.com", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-api.template"]]
+            TemplateURL: !Join ["/", ["https://s3.cn-north-1.amazonaws.com.cn", !FindInMap ["SourceCode", "General", "S3TemplateBucket"], !FindInMap ["SourceCode", "General", "KeyPrefix"], "data-lake-api.template"]]
             Parameters:
                 AuthorizerArn: !GetAtt DataLakeServicesStack.Outputs.AuthorizerArn
                 AdminArn: !GetAtt DataLakeServicesStack.Outputs.AdminArn
@@ -518,7 +518,7 @@ Resources:
             HttpVersion: http2
             IPV6Enabled: true
             Logging:
-                Bucket: !Join [".", [Ref: "CFDataLakeAccessBucket", "s3.amazonaws.com"]]
+                Bucket: !Join [".", [Ref: "CFDataLakeAccessBucket", "s3.cn-north-1.amazonaws.com.cn"]]
                 IncludeCookies: true
                 Prefix: "cf-dl-federated"
             Origins:
