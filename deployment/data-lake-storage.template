@@ -248,8 +248,8 @@ Resources:
                 Statement:
                     -
                         Effect: "Allow"
-#                        Principal:
-#                            Federated: "cognito-identity.amazonaws.com"
+                        Principal:
+                            Federated: "cognito-identity.amazonaws.com"
                         Action:
                             - "sts:AssumeRoleWithWebIdentity"
 #                        Condition:
