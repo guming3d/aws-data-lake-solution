@@ -207,11 +207,11 @@ Resources:
         Properties:
             LogGroupName: "/datalake/es-log"
 
-    CognitoKibanaIdentityPool:
-        Type: AWS::Cognito::IdentityPool
-        Properties:
-            IdentityPoolName: "data lake kibana"
-            AllowUnauthenticatedIdentities: true
+#    CognitoKibanaIdentityPool:
+#        Type: AWS::Cognito::IdentityPool
+#        Properties:
+#            IdentityPoolName: "data lake kibana"
+#            AllowUnauthenticatedIdentities: true
 
     CognitoKibanaConfigureRole:
         Type: "AWS::IAM::Role"
@@ -248,23 +248,23 @@ Resources:
                 Statement:
                     -
                         Effect: "Allow"
-                        Principal:
-                            Federated: "cognito-identity.amazonaws.com"
+#                        Principal:
+#                            Federated: "cognito-identity.amazonaws.com"
                         Action:
                             - "sts:AssumeRoleWithWebIdentity"
-                        Condition:
-                            StringEquals:
-                                "cognito-identity.amazonaws.com:aud": !Ref CognitoKibanaIdentityPool
-                            "ForAnyValue:StringLike":
-                                "cognito-identity.amazonaws.com:amr": authenticated
+#                        Condition:
+#                            StringEquals:
+#                                "cognito-identity.amazonaws.com:aud": !Ref CognitoKibanaIdentityPool
+#                            "ForAnyValue:StringLike":
+#                                "cognito-identity.amazonaws.com:amr": authenticated
 
-    CognitoKibanaAccessRoleAttachment:
-        Type: AWS::Cognito::IdentityPoolRoleAttachment
-        Properties:
-            IdentityPoolId: !Ref CognitoKibanaIdentityPool
-            Roles:
-                authenticated: !GetAtt CognitoKibanaAccessRole.Arn
-                unauthenticated: !GetAtt CognitoKibanaAccessRole.Arn
+#    CognitoKibanaAccessRoleAttachment:
+#        Type: AWS::Cognito::IdentityPoolRoleAttachment
+#        Properties:
+#            IdentityPoolId: !Ref CognitoKibanaIdentityPool
+#            Roles:
+#                authenticated: !GetAtt CognitoKibanaAccessRole.Arn
+#                unauthenticated: !GetAtt CognitoKibanaAccessRole.Arn
 
     DataLakeElasticsearchCluster:
         Type: "AWS::Elasticsearch::Domain"
@@ -318,6 +318,6 @@ Outputs:
         Description: "Elasticsearch Cluster Log Group ARN"
         Value: !GetAtt DataLakeESLogGroup.Arn
 
-    CognitoKibanaIdentityPool:
-        Description: "Cognito kibana identity pool"
-        Value: !Ref CognitoKibanaIdentityPool
+#    CognitoKibanaIdentityPool:
+#        Description: "Cognito kibana identity pool"
+#        Value: !Ref CognitoKibanaIdentityPool
