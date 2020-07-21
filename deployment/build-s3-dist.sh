@@ -18,6 +18,7 @@
  
 # Check to see if input has been provided:
 [ "$DEBUG" == 'true' ] && set -x
+set -x
 set -e
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ]; then 

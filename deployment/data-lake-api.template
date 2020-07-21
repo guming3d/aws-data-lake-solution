@@ -120,7 +120,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -166,7 +166,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -212,7 +212,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -258,7 +258,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -304,7 +304,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -350,7 +350,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn",":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -396,7 +396,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -442,7 +442,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -488,7 +488,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -534,7 +534,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -580,7 +580,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -624,7 +624,7 @@ Resources:
                           schema:
                             $ref: "#/definitions/Empty"
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AdminArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -670,7 +670,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "CartArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "CartArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -716,7 +716,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "CartArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "CartArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -763,7 +763,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -809,7 +809,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -855,7 +855,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -901,7 +901,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -947,7 +947,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -993,7 +993,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1039,7 +1039,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1085,7 +1085,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1131,7 +1131,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1177,7 +1177,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "PackageArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1223,7 +1223,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "ProfileArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "ProfileArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1269,7 +1269,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "ProfileArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "ProfileArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1315,7 +1315,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "SearchArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "SearchArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1361,7 +1361,7 @@ Resources:
                       security:
                       - Data_Lake_Authorizer: []
                       x-amazon-apigateway-integration:
-                        uri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "SearchArn", "/invocations"]]
+                        uri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "SearchArn", "/invocations"]]
                         passthroughBehavior: "when_no_match"
                         httpMethod: "POST"
                         type: "aws_proxy"
@@ -1374,7 +1374,7 @@ Resources:
                     x-amazon-apigateway-authtype: "custom"
                     x-amazon-apigateway-authorizer:
                       authorizerResultTtlInSeconds: 300
-                      authorizerUri: !Join ["", ["arn:aws:apigateway:", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AuthorizerArn", "/invocations"]]
+                      authorizerUri: !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "apigateway", ":", Ref: "AWS::Region",":lambda:path/2015-03-31/functions/", Ref: "AuthorizerArn", "/invocations"]]
                       authorizerCredentials: !GetAtt DataLakeLambdaExecRole.Arn
                       type: "token"
                 definitions:

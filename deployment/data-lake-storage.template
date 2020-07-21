@@ -223,7 +223,7 @@ Resources:
         Properties:
             RoleName: !Join ["-", ["data-lake-kibana-configure-role", Ref: "AWS::Region" ]]
             ManagedPolicyArns:
-                - arn:aws:iam::aws:policy/AmazonESCognitoAccess
+                - !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "iam::aws:policy/AmazonESCognitoAccess"]]
             AssumeRolePolicyDocument:
                 Version: "2012-10-17"
                 Statement:
@@ -301,7 +301,7 @@ Resources:
                         Action:
                                 - "es:*"
                         Resource:
-                            !Join ["", ["arn:aws:es:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":domain/data-lake/*"]]
+                            !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "es:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":domain/data-lake/*"]]
             AdvancedOptions:
                 rest.action.multi.allow_explicit_index: true
 

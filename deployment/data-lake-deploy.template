@@ -269,19 +269,19 @@ Resources:
                                     - "logs:CreateLogStream"
                                     - "logs:PutLogEvents"
                                 Resource:
-                                    - !Join ["", ["arn:aws:logs:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":log-group:/aws/lambda/data-lake-helper:*"]]
+                                    - !Join ["", ["arn:", Ref: "AWS::Partition", ":", "logs", ":", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":log-group:/aws/lambda/data-lake-helper:*"]]
                             -
                                 Effect: "Allow"
                                 Action:
                                     - "dynamodb:PutItem"
                                 Resource:
-                                    - !Join ["", ["arn:aws:dynamodb:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":table/data-lake-settings"]]
+                                    - !Join ["", ["arn:", Ref: "AWS::Partition", ":", "dynamodb", ":", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":table/data-lake-settings"]]
                             -
                                 Effect: "Allow"
                                 Action:
                                     - "dynamodb:Scan"
                                 Resource:
-                                    - !Join ["", ["arn:aws:dynamodb:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":table/data-lake-packages"]]
+                                    - !Join ["", ["arn:", Ref: "AWS::Partition", ":", "dynamodb", ":", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":table/data-lake-packages"]]
                             -
                                 Effect: "Allow"
                                 Action:
@@ -303,25 +303,25 @@ Resources:
                                     - "cognito-idp:ListUserPoolClients"
                                     - "cognito-idp:UpdateUserPoolClient"
                                 Resource:
-                                    - !Join ["", ["arn:aws:cognito-idp:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":userpool/*"]]
+                                    - !Join ["", ["arn", ":", Ref: "AWS::Partition", ":", "cognito-idp:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":userpool/*"]]
                             -
                                 Effect: "Allow"
                                 Action:
                                     - "es:ESHttpPut"
                                 Resource:
-                                    !Join ["", ["arn:aws:es:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":domain/data-lake/*"]]
+                                    !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "es:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":domain/data-lake/*"]]
                             -
                                 Effect: "Allow"
                                 Action:
                                     - "es:UpdateElasticsearchDomainConfig"
                                 Resource:
-                                    !Join ["", ["arn:aws:es:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":domain/data-lake"]]
+                                    !Join ["", ["arn", ":", Ref: "AWS::Partition", ":", "es", ":", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":domain/data-lake"]]
                             -
                                 Effect: "Allow"
                                 Action:
                                     - "s3:GetObject"
                                 Resource:
-                                    - "arn:aws:s3:::*"
+                                    - !Join [":", ["arn",  Ref: "AWS::Partition", "s3:::*"]]
                             -
                                 Effect: "Allow"
                                 Action:
@@ -329,7 +329,7 @@ Resources:
                                     - "s3:ListObjects"
                                     - "s3:DeleteObject"
                                 Resource:
-                                    - !Join ["", ["arn:aws:s3:::datalakeweb-", Ref: "AWS::Region", "-", Ref: "AWS::AccountId", "/*" ]]
+                                    - !Join ["", ["arn", ":", Ref: "AWS::Partition", ":s3:::datalakeweb-", Ref: "AWS::Region", "-", Ref: "AWS::AccountId", "/*" ]]
                             -
                                 Effect: "Allow"
                                 Action:
@@ -340,14 +340,14 @@ Resources:
                                     - "s3:ListBucket"
                                     - "s3:PutBucketWebsite"
                                 Resource:
-                                    - !Join ["", ["arn:aws:s3:::datalakeweb-", Ref: "AWS::Region", "-", Ref: "AWS::AccountId"]]
+                                    - !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":s3:::datalakeweb-", Ref: "AWS::Region", "-", Ref: "AWS::AccountId"]]
                             -
                                 Effect: "Allow"
                                 Action:
                                     - "s3:CreateBucket"
                                     - "s3:PutBucketCORS"
                                 Resource:
-                                    - !Join ["", ["arn:aws:s3:::data-lake-", Ref: "AWS::Region", "-", Ref: "AWS::AccountId"]]
+                                    - !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":s3:::data-lake-", Ref: "AWS::Region", "-", Ref: "AWS::AccountId"]]
                             -
                                 Effect: "Allow"
                                 Action:
@@ -368,7 +368,7 @@ Resources:
                                     - "logs:PutResourcePolicy"
                                     - "logs:DeleteResourcePolicy"
                                 Resource:
-                                    - !Join ["", ["arn:aws:logs:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":log-group::log-stream:*"]]
+                                    - !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "logs:", Ref: "AWS::Region", ":", Ref: "AWS::AccountId", ":log-group::log-stream:*"]]
 
     DataLakeHelper:
         Type: "AWS::Lambda::Function"
@@ -393,7 +393,7 @@ Resources:
         Properties:
             StageDescription:
                 AccessLogSetting:
-                    DestinationArn: !Join [":", ["arn:aws:logs", Ref: "AWS::Region", Ref: "AWS::AccountId", !Join ["/",["log-group:API-Gateway-Execution-Logs-DataLakeApi", !GetAtt "DataLakeApiStack.Outputs.ApiId"]]]]
+                    DestinationArn: !Join [":", ["arn", Ref: "AWS::Partition", "logs", Ref: "AWS::Region", Ref: "AWS::AccountId", !Join ["/",["log-group:API-Gateway-Execution-Logs-DataLakeApi", !GetAtt "DataLakeApiStack.Outputs.ApiId"]]]]
                     Format: $context.identity.sourceIp $context.identity.caller $context.identity.user [$context.requestTime] "$context.httpMethod $context.resourcePath $context.protocol" $context.status $context.responseLength $context.requestId
             RestApiId: !GetAtt DataLakeApiStack.Outputs.ApiId
             Description: "Production"
@@ -431,7 +431,7 @@ Resources:
                             - "logs:PutLogEvents"
                             - "logs:GetLogEvents"
                             - "logs:FilterLogEvents"
-                          Resource: !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:*"
+                          Resource: !Sub "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:*"
  
     ApiAccountConfig: 
         Type: "AWS::ApiGateway::Account" 
