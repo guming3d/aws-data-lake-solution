@@ -222,17 +222,14 @@ Resources:
                       reason: "Explicit names to avoid cyclic dependencies, easy referencing and better readeability"
         Properties:
             RoleName: !Join ["-", ["data-lake-kibana-configure-role", Ref: "AWS::Region" ]]
-            ManagedPolicyArns:
-                - !Join ["", ["arn", ":",  Ref: "AWS::Partition", ":", "iam::aws:policy/AmazonESCognitoAccess"]]
             AssumeRolePolicyDocument:
                 Version: "2012-10-17"
                 Statement:
                     -
                         Effect: "Allow"
                         Principal:
-                            Service: "es.amazonaws.com"
-                        Action:
-                            - "sts:AssumeRole"
+                            Service: *
+                        Action: *
 
     CognitoKibanaAccessRole:
         Type: "AWS::IAM::Role"
