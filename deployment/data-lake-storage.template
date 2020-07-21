@@ -225,11 +225,11 @@ Resources:
             AssumeRolePolicyDocument:
                 Version: "2012-10-17"
                 Statement:
-                    -
-                        Effect: "Allow"
-                        Principal:
-                            Service: *
-                        Action: *
+                    - Effect: Allow
+                      Principal:
+                        Service: "*"
+                      Action:
+                        - 'sts:AssumeRole'
 
     CognitoKibanaAccessRole:
         Type: "AWS::IAM::Role"
